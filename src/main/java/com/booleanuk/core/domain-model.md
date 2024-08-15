@@ -1,7 +1,7 @@
 | Class                        | Variables               | Methods                        | Scenario                                                        | Outputs                              |
 |------------------------------|-------------------------|--------------------------------|-----------------------------------------------------------------|--------------------------------------|
 | `TodoList`                   | `ArrayList<Task> tasks` | `add(Task task)`               | Task is added to list.                                          | true                                 |
-|                              |                         |                                | Task can't be added to list.                                    | false                                |
+|                              | `int size`              |                                | Task can't be added to list.                                    | false                                |
 |                              |                         | `listAll()`                    | There is tasks in todo list.                                    | List, all tasks                      |
 |                              |                         |                                | There is no tasks.                                              | Show error message                   |
 |                              |                         | `listAll(boolean status)`      | List all tasks that have status true.                           | List, only tasks that are complete   |
@@ -19,3 +19,15 @@
 |                              | `boolean Status`        | `changeStatus(boolean status)` | Change status to true.                                          | Status is complete                   |
 |                              |                         |                                | Change status to false.                                         | Status is incomplete                 |
 |                              |                         | `status()`                     | Get status for this task.                                       | true/false                           |
+
+
+## Core Requirements
+- [ ] I want to add tasks to my todo list.
+- [ ] I want to see all the tasks in my todo list.
+- [ ] I want to change the status of a task between incomplete and complete.
+- [ ] I want to be able to get only the complete tasks.
+- [ ] I want to be able to get only the incomplete tasks.
+- [ ] I want to search for a task and receive a message that says it wasn't found if it doesn't exist.
+- [ ] I want to remove tasks from my list.
+- [ ] I want to see all the tasks in my list ordered alphabetically in ascending order.
+- [ ] I want to see all the tasks in my list ordered alphabetically in descending order.
