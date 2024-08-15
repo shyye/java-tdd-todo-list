@@ -75,4 +75,16 @@ class TodoListTest {
             Assertions.assertTrue(task.status() == Status.INCOMPLETE);
         }
     }
+
+    @Test
+    public void checkTaskStatus() {
+        Task task = new Task(1, "Code");
+        Assertions.assertEquals(Status.INCOMPLETE, task.status());
+
+        task.changeStatus(Status.COMPLETE);
+        Assertions.assertEquals(Status.COMPLETE, task.status());
+
+        task.changeStatus(Status.INCOMPLETE);
+        Assertions.assertEquals(Status.INCOMPLETE, task.status());
+    }
 }
