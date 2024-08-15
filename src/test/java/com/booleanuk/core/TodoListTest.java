@@ -99,6 +99,6 @@ class TodoListTest {
     public void searchShouldReturnFalse() {
         this.todoList = new TodoList();
         todoList.add(new Task(1, "Code"));
-        Assertions.assertTrue(todoList.search("Todo list"));
+        Assertions.assertFalse(todoList.search("Todo list"));
     }
 }
