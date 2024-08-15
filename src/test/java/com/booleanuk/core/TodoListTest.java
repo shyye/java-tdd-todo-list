@@ -138,4 +138,26 @@ class TodoListTest {
             Assertions.assertEquals(correctListSorted.get(i).id(), sortedList.get(i).id());
         }
     }
+
+    @Test
+    public void sortedListDescending() {
+        this.todoList = new TodoList();
+        todoList.add(new Task(1, "Ba"));
+        todoList.add(new Task(2, "Aa"));
+        todoList.add(new Task(3, "C"));
+        todoList.add(new Task(4, "Ab"));
+
+        ArrayList<Task> correctListSorted = new ArrayList<>();
+        correctListSorted.add(new Task(3, "C"));
+        correctListSorted.add(new Task(1, "Ba"));
+        correctListSorted.add(new Task(4, "Ab"));
+        correctListSorted.add(new Task(2, "Aa"));
+
+        ArrayList<Task> sortedList = todoList.sortedList(Order.DESCENDING);
+
+        // Compare id in the arraylists
+        for (int i = 0; i < correctListSorted.size(); i++) {
+            Assertions.assertEquals(correctListSorted.get(i).id(), sortedList.get(i).id());
+        }
+    }
 }
