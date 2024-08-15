@@ -103,4 +103,10 @@ class TodoListTest {
         todoList.add(new Task(1, "Code"));
         Assertions.assertFalse(todoList.search("Todo list"));
     }
+
+    @Test
+    public void removeTaskFromListThatDontExist() {
+        this.todoList = new TodoList();
+        Assertions.assertFalse(todoList.remove(1));
+    }
 }
