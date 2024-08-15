@@ -21,10 +21,13 @@ class TodoListTest {
     @Test
     public void listAllShouldReturnList() {
         // TODO: Not sure about this test, do I test the right things?
+        // TODO: How do you check system.out.print-messages?
 
         this.todoList = new TodoList();
         Task task = new Task(1, "Code");
         Task task2 = new Task(2, "Draw");
+        this.todoList.add(task);
+        this.todoList.add(task2);
 
         ArrayList<Task> correctlist = new ArrayList<>();
         correctlist.add(task);
