@@ -67,4 +67,15 @@ public class TodoList {
         System.out.println("===\nSearch Result:\n\tNo tasks found.\n===");
         return false;
     }
+
+    public boolean remove(int taskId) {
+        for (Task task : this.tasks) {
+            if (task.id() == taskId) {
+                System.out.println("Task ID #" + task.id() + " succesfully removed.");
+                return true;
+            }
+        }
+        System.out.println("Task with ID #" + taskId + " does not exist.");
+        return false;
+    }
 }
