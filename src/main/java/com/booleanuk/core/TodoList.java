@@ -50,4 +50,13 @@ public class TodoList {
         printList(newTaskList, status.toString());
         return newTaskList;
     }
+
+    public boolean search(String taskTitle) {
+        for (Task task : this.tasks) {
+            if(task.title().equals(taskTitle)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
