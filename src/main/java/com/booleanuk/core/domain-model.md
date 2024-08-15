@@ -4,9 +4,9 @@
 |                              | `int size`              |                                   | Task can't be added to list.                                    | false                                |
 |                              |                         | `listAll()`                       | There is tasks in todo list.                                    | List, all tasks                      |
 |                              |                         |                                   | There is no tasks.                                              | Show message                         |
-|                              |                         | `listAll(ENUM status)`            | List all tasks that have status completed.                      | List, only tasks that are complete   |
+|                              |                         | `listAll(Status status)` (enum)   | List all tasks that have status completed.                      | List, only tasks that are complete   |
 |                              |                         |                                   | List all tasks that have status incompleted.                    | List, only tasks that are incomplete |
-|                              |                         | `sortedList(ENUM order)`          | Sort list in ascending order.                                   | Sorted list, ascending               |
+|                              |                         | `sortedList(Order order)` (enum)  | Sort list in ascending order.                                   | Sorted list, ascending               |
 |                              |                         |                                   | Sort list in descending order.                                  | Sorted list, descending              |
 |                              |                         | `search(String taskTitle)`        | If task exist.                                                  | true; Show task                      |
 |                              |                         |                                   | If task doesn't exist.                                          | false; Show error message            |
@@ -21,6 +21,8 @@
 |                              | `boolean Status`        | `changeStatus(boolean status)`    | Change status to true (complete).                               | -                                    |
 |                              |                         |                                   | Change status to false (incomplete).                            | -                                    |
 |                              |                         | `status()`                        | Get status for this task.                                       | true/false                           |
+| `enum Status`                | `COMPLETE, INCOMPLETE`  |                                   |                                                                 |                                      |
+| `enum Order`                 | `ASCENDING, DESCENDING` |                                   |                                                                 |                                      |
 
 
 ## Core Requirements
