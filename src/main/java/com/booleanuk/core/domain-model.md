@@ -16,8 +16,8 @@
 |                              |                         | `get(int id)`                  | Get Task based on id. Task exists.                              | Task                                 |
 |                              |                         |                                | Get Task based on id. Task doesn't exist.                       | null                                 |
 |                              | `String title`          | `title()`                      | Get title of this task.                                         | String                               |
-|                              | `boolean Status`        | `changeStatus(boolean status)` | Change status to true.                                          | Status is complete                   |
-|                              |                         |                                | Change status to false.                                         | Status is incomplete                 |
+|                              | `boolean Status`        | `changeStatus(boolean status)` | Change status to true (complete).                               | -                                    |
+|                              |                         |                                | Change status to false (incomplete).                            | -                                    |
 |                              |                         | `status()`                     | Get status for this task.                                       | true/false                           |
 
 
