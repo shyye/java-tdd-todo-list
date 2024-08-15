@@ -3,7 +3,7 @@
 | `TodoList`                   | `ArrayList<Task> tasks` | `add(Task task)`               | Task is added to list.                                          | true                                 |
 |                              | `int size`              |                                | Task can't be added to list.                                    | false                                |
 |                              |                         | `listAll()`                    | There is tasks in todo list.                                    | List, all tasks                      |
-|                              |                         |                                | There is no tasks.                                              | Show error message                   |
+|                              |                         |                                | There is no tasks.                                              | Show message                         |
 |                              |                         | `listAll(boolean status)`      | List all tasks that have status true.                           | List, only tasks that are complete   |
 |                              |                         |                                | List all tasks that have status false.                          | List, only tasks that are incomplete |
 |                              |                         | `sort(String order)`           | Sort list in ascending order.                                   | Sorted list, ascending               |
@@ -22,7 +22,7 @@
 
 
 ## Core Requirements
-- [ ] I want to add tasks to my todo list.
+- [x] I want to add tasks to my todo list.
 - [ ] I want to see all the tasks in my todo list.
 - [ ] I want to change the status of a task between incomplete and complete.
 - [ ] I want to be able to get only the complete tasks.
