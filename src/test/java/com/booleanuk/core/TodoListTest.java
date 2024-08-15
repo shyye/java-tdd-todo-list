@@ -116,4 +116,22 @@ class TodoListTest {
         todoList.add(new Task(1, "Walk"));
         Assertions.assertTrue(todoList.remove(1));
     }
+
+    @Test
+    public void sortedListAscending() {
+        this.todoList = new TodoList();
+        todoList.add(new Task(1, "Ba"));
+        todoList.add(new Task(1, "Aa"));
+        todoList.add(new Task(1, "C"));
+        todoList.add(new Task(1, "Ab"));
+
+        ArrayList<Task> correctListSorted = new ArrayList<>();
+        correctListSorted.add(new Task(1, "Aa"));
+        correctListSorted.add(new Task(1, "Ab"));
+        correctListSorted.add(new Task(1, "Ba"));
+        correctListSorted.add(new Task(1, "C"));
+
+        ArrayList<Task> sortedList = todoList.sortedList(Order.ASCENDING);
+        Assertions.assertArrayEquals(correctListSorted.toArray(), sortedList.toArray());
+    }
 }
