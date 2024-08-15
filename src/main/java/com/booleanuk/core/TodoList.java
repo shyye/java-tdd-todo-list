@@ -78,4 +78,13 @@ public class TodoList {
         System.out.println("Task with ID #" + taskId + " does not exist.");
         return false;
     }
+
+    public ArrayList<Task> sortedList(Order order) {
+        ArrayList<Task> sortedList = this.tasks;
+
+        if (order == Order.ASCENDING) {
+            sortedList.sort( (a, b) -> { return a.title().compareTo(b.title());});
+        }
+        return sortedList;
+    }
 }
