@@ -87,4 +87,18 @@ class TodoListTest {
         task.changeStatus(Status.INCOMPLETE);
         Assertions.assertEquals(Status.INCOMPLETE, task.status());
     }
+
+    @Test
+    public void searchShouldReturnTrue() {
+        this.todoList = new TodoList();
+        todoList.add(new Task(1, "Code"));
+        Assertions.assertTrue(todoList.search("Code"));
+    }
+
+    @Test
+    public void searchShouldReturnFalse() {
+        this.todoList = new TodoList();
+        todoList.add(new Task(1, "Code"));
+        Assertions.assertTrue(todoList.search("Todo list"));
+    }
 }
