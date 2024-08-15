@@ -47,4 +47,24 @@ class TodoListTest {
 
         Assertions.assertTrue(list.containsAll(correctlist));
     }
+
+    @Test
+    public void listAllShouldReturnOnlyCompletedTasks() {
+        this.todoList = new TodoList();
+
+        Task tasks[] = new Task[] {
+                new Task(1, "Code"),
+                new Task(2, "Draw").changeStatus(true),
+                new Task(3, "Workout"),
+                new Task(4, "Buy food").changeStatus(true)
+        };
+        for (Task task : tasks) {
+            todoList.add(task);
+        }
+
+        ArrayList<Task> completedTasks = todoList.listAll(true);
+        for (Task task : tasks) {
+            Assertions.assertTrue(task.status());
+        }
+    }
 }
