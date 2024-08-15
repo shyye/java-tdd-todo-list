@@ -92,6 +92,8 @@ class TodoListTest {
     public void searchShouldReturnTrue() {
         this.todoList = new TodoList();
         todoList.add(new Task(1, "Code"));
+        todoList.add(new Task(1, "Code and chill"));
+        todoList.add(new Task(1, "Draw"));
         Assertions.assertTrue(todoList.search("Code"));
     }
 
