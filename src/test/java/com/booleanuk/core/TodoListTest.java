@@ -109,4 +109,11 @@ class TodoListTest {
         this.todoList = new TodoList();
         Assertions.assertFalse(todoList.remove(1));
     }
+
+    @Test
+    public void removeTaskFromListThatExists() {
+        this.todoList = new TodoList();
+        todoList.add(new Task(1, "Walk"));
+        Assertions.assertTrue(todoList.remove(1));
+    }
 }
