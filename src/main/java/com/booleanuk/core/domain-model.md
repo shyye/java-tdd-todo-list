@@ -4,9 +4,9 @@
 |                              | `int size`              |                                   | Task can't be added to list.                                    | false                                |
 |                              |                         | `listAll()`                       | There is tasks in todo list.                                    | List, all tasks                      |
 |                              |                         |                                   | There is no tasks.                                              | Show message                         |
-|                              |                         | `listAll(boolean status)`         | List all tasks that have status true.                           | List, only tasks that are complete   |
-|                              |                         |                                   | List all tasks that have status false.                          | List, only tasks that are incomplete |
-|                              |                         | `sortedList(String order)`        | Sort list in ascending order.                                   | Sorted list, ascending               |
+|                              |                         | `listAll(ENUM status)`            | List all tasks that have status completed.                      | List, only tasks that are complete   |
+|                              |                         |                                   | List all tasks that have status incompleted.                    | List, only tasks that are incomplete |
+|                              |                         | `sortedList(ENUM order)`          | Sort list in ascending order.                                   | Sorted list, ascending               |
 |                              |                         |                                   | Sort list in descending order.                                  | Sorted list, descending              |
 |                              |                         | `search(String taskTitle)`        | If task exist.                                                  | true; Show task                      |
 |                              |                         |                                   | If task doesn't exist.                                          | false; Show error message            |
