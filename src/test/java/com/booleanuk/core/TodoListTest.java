@@ -54,16 +54,19 @@ class TodoListTest {
 
         Task tasks[] = new Task[] {
                 new Task(1, "Code"),
-                new Task(2, "Draw").changeStatus(true),
+                new Task(2, "Draw"),
                 new Task(3, "Workout"),
-                new Task(4, "Buy food").changeStatus(true)
+                new Task(4, "Buy food")
         };
         for (Task task : tasks) {
+            if (task.id() == 2 || task.id() ==4) {
+                task.changeStatus(true);
+            }
             todoList.add(task);
         }
 
         ArrayList<Task> completedTasks = todoList.listAll(true);
-        for (Task task : tasks) {
+        for (Task task : completedTasks) {
             Assertions.assertTrue(task.status());
         }
     }
