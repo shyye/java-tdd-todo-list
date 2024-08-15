@@ -20,4 +20,19 @@ public class TodoList {
     public int size() {
         return this.size;
     }
+
+    public ArrayList<Task> listAll() {
+
+        System.out.println("=== Task List ===");
+        if (this.tasks.size() == 0) {
+            System.out.println("\tNo tasks.");
+        } else {
+            for (Task task : this.tasks) {
+                System.out.println("\tID #" + task.id() + ": " + task.title());
+            }
+        }
+        System.out.println("=================");
+
+        return this.tasks;
+    }
 }
