@@ -52,11 +52,19 @@ public class TodoList {
     }
 
     public boolean search(String taskTitle) {
+
+        ArrayList <Task> searchResult = new ArrayList<>();
         for (Task task : this.tasks) {
-            if(task.title().equals(taskTitle)) {
-                return true;
+            if(task.title().contains(taskTitle)) {
+                searchResult.add(task);
             }
         }
+
+        if (!searchResult.isEmpty()) {
+            printList(searchResult, "Search Result");
+            return true;
+        }
+        System.out.println("===\nSearch Result:\n\tNo tasks found.\n===");
         return false;
     }
 }
