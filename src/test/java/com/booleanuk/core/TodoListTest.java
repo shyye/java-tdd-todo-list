@@ -59,20 +59,20 @@ class TodoListTest {
         };
         for (Task task : tasks) {
             if (task.id() == 2 || task.id() ==4) {
-                task.changeStatus(true);
+                task.changeStatus(Status.COMPLETE);
             }
             todoList.add(task);
         }
 
         // TODO: Check if this is correct way to do it or not
-        ArrayList<Task> completedTasks = todoList.listAll(true);
+        ArrayList<Task> completedTasks = todoList.listAll(Status.COMPLETE);
         for (Task task : completedTasks) {
-            Assertions.assertTrue(task.status());
+            Assertions.assertTrue(task.status() == Status.COMPLETE);
         }
 
-        ArrayList<Task> incompletedTasks = todoList.listAll(false);
+        ArrayList<Task> incompletedTasks = todoList.listAll(Status.INCOMPLETE);
         for (Task task : incompletedTasks) {
-            Assertions.assertFalse(task.status());
+            Assertions.assertTrue(task.status() == Status.INCOMPLETE);
         }
     }
 }
