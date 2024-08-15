@@ -21,10 +21,9 @@ public class TodoList {
         return this.size;
     }
 
-    public ArrayList<Task> listAll() {
-
+    public void printList(ArrayList<Task> list) {
         System.out.println("=== Task List ===");
-        if (this.tasks.size() == 0) {
+        if (list.size() == 0) {
             System.out.println("\tNo tasks.");
         } else {
             for (Task task : this.tasks) {
@@ -32,7 +31,22 @@ public class TodoList {
             }
         }
         System.out.println("=================");
+    }
 
+    public ArrayList<Task> listAll() {
+
+        printList(this.tasks);
         return this.tasks;
+    }
+
+    public ArrayList<Task> listAll(boolean status) {
+
+        ArrayList<Task> newTaskList = new ArrayList<>();
+        for (Task task : this.tasks) {
+            if (task.status() == status) {
+                newTaskList.add(task);
+            }
+        }
+        return newTaskList;
     }
 }

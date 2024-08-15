@@ -21,4 +21,12 @@ public class Task {
     public String title() {
         return this.title;
     }
+
+    public boolean status() {
+        return this.status;
+    }
+
+    public void changeStatus(boolean status) {
+        this.status = status;
+    }
 }
