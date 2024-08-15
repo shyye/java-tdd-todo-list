@@ -3,7 +3,6 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 class TodoListTest {
@@ -49,7 +48,7 @@ class TodoListTest {
     }
 
     @Test
-    public void listAllShouldReturnOnlyCompletedTasks() {
+    public void listAllShouldReturnOnlyCompletedOrIncompletedTasks() {
         this.todoList = new TodoList();
 
         Task tasks[] = new Task[] {
@@ -65,9 +64,15 @@ class TodoListTest {
             todoList.add(task);
         }
 
+        // TODO: Check if this is correct way to do it or not
         ArrayList<Task> completedTasks = todoList.listAll(true);
         for (Task task : completedTasks) {
             Assertions.assertTrue(task.status());
+        }
+
+        ArrayList<Task> incompletedTasks = todoList.listAll(false);
+        for (Task task : incompletedTasks) {
+            Assertions.assertFalse(task.status());
         }
     }
 }
