@@ -80,10 +80,13 @@ public class TodoList {
     }
 
     public ArrayList<Task> sortedList(Order order) {
+        // Reference: https://www.w3schools.com/java/ref_arraylist_sort.asp
         ArrayList<Task> sortedList = this.tasks;
 
         if (order == Order.ASCENDING) {
             sortedList.sort( (a, b) -> { return a.title().compareTo(b.title());});
+        } else if (order == Order.DESCENDING) {
+            sortedList.sort( (a, b) -> { return -1 * a.title().compareTo(b.title());});
         }
         return sortedList;
     }
