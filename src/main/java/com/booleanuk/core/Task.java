@@ -4,14 +4,14 @@ public class Task {
 
     private int id;
     private String title;
-    private boolean status;
+    private Status status;
 
     // TODO: Do I need to do something specific to make arguments/parameters required to fill in?
     // TODO: How to validate in a constructor?
     public Task(int id, String title) {
         this.id = id;
         this.title = title;
-        this.status = false;
+        this.status = Status.INCOMPLETE;
     }
 
     public int id() {
@@ -22,11 +22,11 @@ public class Task {
         return this.title;
     }
 
-    public boolean status() {
+    public Status status() {
         return this.status;
     }
 
-    public void changeStatus(boolean status) {
+    public void changeStatus(Status status) {
         this.status = status;
     }
 }

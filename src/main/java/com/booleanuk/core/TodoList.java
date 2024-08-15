@@ -21,12 +21,12 @@ public class TodoList {
         return this.size;
     }
 
-    public void printList(ArrayList<Task> list) {
-        System.out.println("=== Task List ===");
-        if (list.size() == 0) {
+    public void printList(ArrayList<Task> list, String description) {
+        System.out.println("=== Task List (" + description + ") ===");
+        if (list.isEmpty()) {
             System.out.println("\tNo tasks.");
         } else {
-            for (Task task : this.tasks) {
+            for (Task task : list) {
                 System.out.println("\tID #" + task.id() + ": " + task.title());
             }
         }
@@ -35,11 +35,11 @@ public class TodoList {
 
     public ArrayList<Task> listAll() {
 
-        printList(this.tasks);
+        printList(this.tasks, "All");
         return this.tasks;
     }
 
-    public ArrayList<Task> listAll(boolean status) {
+    public ArrayList<Task> listAll(Status status) {
 
         ArrayList<Task> newTaskList = new ArrayList<>();
         for (Task task : this.tasks) {
@@ -47,6 +47,7 @@ public class TodoList {
                 newTaskList.add(task);
             }
         }
+        printList(newTaskList, status.toString());
         return newTaskList;
     }
 }
