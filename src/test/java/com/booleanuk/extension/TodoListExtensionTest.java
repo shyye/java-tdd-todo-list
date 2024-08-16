@@ -51,5 +51,11 @@ public class TodoListExtensionTest {
         // TODO: Unsure about how to test this
         TaskExtension task = new TaskExtension(1, "Time task");
         Assertions.assertNotEquals(null, task.dateCreated());
+
+        // Print out with date and timestamp
+        todoList = new TodoListExtension();
+        todoList.add(task);
+        todoList.add(new TaskExtension(2, "Draw"));
+        todoList.listAll();
     }
 }
