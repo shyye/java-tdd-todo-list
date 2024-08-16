@@ -1,5 +1,6 @@
 package com.booleanuk.extension;
 
+import com.booleanuk.core.Status;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -30,5 +31,18 @@ public class TodoListExtensionTest {
 
         // Try to change name on task that doesn't exist
         Assertions.assertFalse(todoList.changeTitle(2, "Code a project in Java"));
+    }
+
+    @Test
+    public void changeStatus() {
+        todoList = new TodoListExtension();
+        TaskExtension task = new TaskExtension(1, "Code");
+        todoList.add(task);
+
+        // Try to change name on task that exist
+        Assertions.assertTrue(todoList.changeStatus(1, StatusExtension.COMPLETE));
+
+        // Try to change name on task that doesn't exist
+        Assertions.assertFalse(todoList.changeStatus(2, StatusExtension.COMPLETE));
     }
 }
