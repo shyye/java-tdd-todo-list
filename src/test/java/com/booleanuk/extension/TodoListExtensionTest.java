@@ -45,4 +45,11 @@ public class TodoListExtensionTest {
         // Try to change name on task that doesn't exist
         Assertions.assertFalse(todoList.changeStatus(2, StatusExtension.COMPLETE));
     }
+
+    @Test
+    public void getDateFromTask() {
+        // TODO: Unsure about how to test this
+        TaskExtension task = new TaskExtension(1, "Time task");
+        Assertions.assertNotEquals(null, task.dateCreated());
+    }
 }
