@@ -15,15 +15,16 @@
 |                              |                         | `printList(ArrayList<Task> list, String description)` | Print provided list. List is not empty.                         | Printed list                         |
 |                              |                         |                                                       | Print provided list. List is empty.                             | Printed empty list with message      |
 |                              |                         | `getTask(int id)`                                     | Get Task based on id. Task doesn't exist.                       | Task / null                          |
-|                              |                         | `changeName(int taskId, String newName)`              | If the task exist, change name.                                 | true                                 |
+|                              |                         | `changeTitle(int taskId, String newTitle)`            | If the task exist, change name.                                 | true                                 |
 |                              |                         |                                                       | If task doesn't exist, can't change name.                       | false                                |
 |                              |                         | `changeStatus(int taskId, Status status)`             | If the task exist, change status.                               | true                                 |
 |                              |                         |                                                       | If task doesn't exist, can't change status.                     | false                                |
 | `Task(int id, String title)` | `int id`                | `id()`                                                | Get id to present id so user can remove task based on id later. | int                                  |
 |                              | `Date dateCreated`      | `dateCreated()`                                       | Get the date and time for when task was created.                | Date/Timestamp                       |
 |                              | `String title`          | `title()`                                             | Get title of this task.                                         | String                               |
-|                              | `boolean Status`        | `changeStatus(boolean status)`                        | Change status to true (complete).                               | -                                    |
-|                              |                         |                                                       | Change status to false (incomplete).                            | -                                    |
+|                              |                         | `changeTitle(String newTitle)`                        | Update title/name of task.                                      | -                                    |
+|                              | `boolean Status`        | `changeStatus(Status status)`                         | Change status to Status.COMPLETE.                               | -                                    |
+|                              |                         |                                                       | Change status to Status.INCOMPPLETE).                           | -                                    |
 |                              |                         | `status()`                                            | Get status for this task.                                       | true/false                           |
 | `enum Status`                | `COMPLETE, INCOMPLETE`  |                                                       |                                                                 |                                      |
 | `enum Order`                 | `ASCENDING, DESCENDING` |                                                       |                                                                 |                                      |
@@ -42,7 +43,7 @@
 
 
 ## Extension Requirements
-- [ ] I want to be able to get a task by a unique ID.
+- [x] I want to be able to get a task by a unique ID.
 - [ ] I want to update the name of a task by providing its ID and a new name.
 - [ ] I want to be able to change the status of a task by providing its ID.
 - [ ] I want to be able to see the date and time that I created each task.
