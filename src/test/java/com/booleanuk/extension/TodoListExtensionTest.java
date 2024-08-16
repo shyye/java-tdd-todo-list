@@ -18,4 +18,17 @@ public class TodoListExtensionTest {
         // Try to get task that dpesn't exist
         Assertions.assertEquals(null, todoList.getTask(2));
     }
+
+    @Test
+    public void changeName() {
+        todoList = new TodoListExtension();
+        TaskExtension task = new TaskExtension(1, "Code");
+        todoList.add(task);
+
+        // Try to change name on task that exist
+        Assertions.assertTrue(todoList.changeName(1, "Code a project in Java"));
+
+        // Try to change name on task that doesn't exist
+        Assertions.assertFalse(todoList.changeName(2, "Code a project in Java"));
+    }
 }
