@@ -28,4 +28,8 @@ public class TaskExtension {
     public void changeStatus(Status status) {
         this.status = status;
     }
+
+    public void changeTitle(String newTitle) {
+        this.title = newTitle;
+    }
 }

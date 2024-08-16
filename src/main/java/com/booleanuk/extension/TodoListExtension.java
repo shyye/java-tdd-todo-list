@@ -103,5 +103,13 @@ public class TodoListExtension {
         return null;
     }
 
+    public boolean changeTitle(int taskId, String newTitle) {
+        TaskExtension task = getTask(taskId);
+        if (task != null) {
+            task.changeTitle(newTitle);
+            return true;
+        }
+        return false;
+    }
 
 }
