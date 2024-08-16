@@ -30,7 +30,7 @@ public class TodoListExtension {
             System.out.println("\tNo tasks.");
         } else {
             for (TaskExtension task : list) {
-                System.out.println("\tID #" + task.id() + ": " + task.title());
+                System.out.println("\tID #" + task.id() + ": " + task.title() + " (Timestamp: " + task.dateCreated() + ")");
             }
         }
         System.out.println("=================");
