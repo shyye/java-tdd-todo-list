@@ -14,8 +14,13 @@
 |                              |                         |                                                       | Remove task from todo list. Task doesn't exist.                 | false                                |
 |                              |                         | `printList(ArrayList<Task> list, String description)` | Print provided list. List is not empty.                         | Printed list                         |
 |                              |                         |                                                       | Print provided list. List is empty.                             | Printed empty list with message      |
+|                              |                         | `changeName(int taskId, String newName)`              | If the task exist, change name.                                 | true                                 |
+|                              |                         |                                                       | If task doesn't exist, can't change name.                       | false                                |
+|                              |                         | `changeStatus(int taskId, Status status)`             | If the task exist, change status.                               | true                                 |
+|                              |                         |                                                       | If task doesn't exist, can't change status.                     | false                                |
 | `Task(int id, String title)` | `int id`                | `id()`                                                | Get id to present id so user can remove task based on id later. | int                                  |
-|                              |                         |                                                       | Get Task based on id. Task doesn't exist.                       | null                                 |
+|                              |                         | `get(int id)`                                         | Get Task based on id. Task doesn't exist.                       | Task / null                          |
+|                              | `Date dateCreated`      | `dateCreated()`                                       | Get the date and time for when task was created.                | Date/Timestamp                       |
 |                              | `String title`          | `title()`                                             | Get title of this task.                                         | String                               |
 |                              | `boolean Status`        | `changeStatus(boolean status)`                        | Change status to true (complete).                               | -                                    |
 |                              |                         |                                                       | Change status to false (incomplete).                            | -                                    |
@@ -34,3 +39,10 @@
 - [x] I want to remove tasks from my list.
 - [x] I want to see all the tasks in my list ordered alphabetically in ascending order.
 - [x] I want to see all the tasks in my list ordered alphabetically in descending order.
+
+
+## Extension Requirements
+- [ ] I want to be able to get a task by a unique ID.
+- [ ] I want to update the name of a task by providing its ID and a new name.
+- [ ] I want to be able to change the status of a task by providing its ID.
+- [ ] I want to be able to see the date and time that I created each task.
