@@ -13,7 +13,7 @@ public class TodoListExtensionTest {
         todoList.add(task);
 
         // Try to get task that exist
-        Assertions.assertTrue(task, todoList.getTask(1));
+        Assertions.assertEquals(task, todoList.getTask(1));
 
         // Try to get task that dpesn't exist
         Assertions.assertFalse(todoList.getTask(2));
