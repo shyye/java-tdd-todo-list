@@ -1,7 +1,7 @@
 package com.booleanuk.extension;
 
 import com.booleanuk.core.Order;
-import com.booleanuk.core.Status;
+import com.booleanuk.extension.StatusExtension;
 import com.booleanuk.core.Task;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class TodoListExtension {
         return this.tasks;
     }
 
-    public ArrayList<TaskExtension> listAll(Status status) {
+    public ArrayList<TaskExtension> listAll(StatusExtension status) {
 
         ArrayList<TaskExtension> newTaskList = new ArrayList<>();
         for (TaskExtension task : this.tasks) {
@@ -107,6 +107,15 @@ public class TodoListExtension {
         TaskExtension task = getTask(taskId);
         if (task != null) {
             task.changeTitle(newTitle);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean changeStatus(int taskId, StatusExtension newStatus) {
+        TaskExtension task = getTask(taskId);
+        if (task != null) {
+            task.changeStatus(newStatus);
             return true;
         }
         return false;
