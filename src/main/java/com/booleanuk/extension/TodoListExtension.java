@@ -94,5 +94,14 @@ public class TodoListExtension {
         return sortedList;
     }
 
+    public TaskExtension getTask(int taskId) {
+        for (TaskExtension task : this.tasks) {
+            if (task.id() == taskId) {
+                return task;
+            }
+        }
+        return null;
+    }
+
 
 }
