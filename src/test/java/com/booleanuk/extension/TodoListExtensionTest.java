@@ -16,6 +16,6 @@ public class TodoListExtensionTest {
         Assertions.assertEquals(task, todoList.getTask(1));
 
         // Try to get task that dpesn't exist
-        Assertions.assertFalse(todoList.getTask(2));
+        Assertions.assertEquals(null, todoList.getTask(2));
     }
 }
